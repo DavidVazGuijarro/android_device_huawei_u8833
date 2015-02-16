@@ -24,34 +24,12 @@
 TARGET_CPU_SMP := true
 
 TARGET_BOOTLOADER_BOARD_NAME := u8833
-TARGET_NO_BOOTLOADER := true
-TARGET_OTA_ASSERT_DEVICE := u8833,hwu8833,u8951,hwu8951
 
 # Audio
 TARGET_PROVIDES_LIBAUDIO := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/u8833/bluetooth
-
-# FM
-BOARD_HAVE_QCOM_FM := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_FM_ENABLED
-COMMON_GLOBAL_CFLAGS += -DAUDIO_EXTN_FM_ENABLED
-
-TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
-
-# Bionic
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
-
-# Enable Minikin text layout engine (will be the default soon)
-USE_MINIKIN := true
-
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
-
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Kernel
 TARGET_KERNEL_CONFIG := u8833_defconfig
